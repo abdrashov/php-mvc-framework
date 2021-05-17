@@ -2,15 +2,15 @@
 
 namespace App\Controller;
 
+use App\Model\User;
 use Core\Controller\Controller;
-use Core\DataBase\DataBase;
 
 class MainController extends Controller
 {
 	public function index()
 	{
-		return view('main', [
-			'title' => 'asdasd'
+		return view('users', [
+			'users' => (new User)->get()
 		]);
 	}
 
